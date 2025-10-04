@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'header.dart';
+import 'footer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,12 +8,24 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: Header(),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60),
+        child: const Header(),
       ),
-      body: const Center(
-        child: Text("This is Home Screen"),
+      body: Column(
+        children: [
+          // Үндсэн контент
+          Expanded(
+            child: const Center(
+              child: Text(
+                "This is Home Screen",
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ),
+          // Footer
+          const Footer(),
+        ],
       ),
     );
   }
