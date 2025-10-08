@@ -43,7 +43,6 @@ class Header extends StatelessWidget {
         IconButton(
           icon: const Icon(Icons.person, color: Colors.white),
           onPressed: () {
-            // Profile action
             showDialog(
               context: context,
               builder: (context) => AlertDialog(

@@ -25,7 +25,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
         title: const Text(
           "Mobicom",
           style: TextStyle(
-            fontSize: 19,
+            fontSize: 8,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),

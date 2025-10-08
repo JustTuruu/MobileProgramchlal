@@ -1,3 +1,4 @@
+import 'package:Mobicom/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class Footer extends StatelessWidget {
@@ -6,7 +7,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20, left: 30, right: 30), // Доод талд 20px зай
+      margin: const EdgeInsets.only(bottom: 20, left: 30, right: 30),
       padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 5, 2, 9),
@@ -22,56 +23,65 @@ class Footer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          // Button 1 - Home
           _buildFooterButton(
+            // imagePath: 'assets/icon/ai.png',
             icon: Icons.home,
             onPressed: () {
-              // Home action
+              HomeScreen();
             },
           ),
-          // Button 3 - Add
           _buildFooterButton(
-            icon: Icons.add_circle,
+            // imagePath: 'assets/icon/ai.png',
+            icon: Icons.home,
             onPressed: () {
               // Add action
             },
           ),
-          // Button 4 - Messages
           _buildFooterButton(
-            icon: Icons.message,
+            imagePath: 'assets/icon/ai.png',
             onPressed: () {
               // Message action
             },
           ),
-          // Button 5 - Settings
           _buildFooterButton(
-            icon: Icons.settings,
+            icon: Icons.home,
             onPressed: () {
               // Settings action
             },
           ),
           _buildFooterButton(
+            // imagePath: 'assets/icon/ai.png',
             icon: Icons.search,
             onPressed: () {
-              // Search action
+              
             },
-          )
+          ),
         ],
       ),
     );
   }
 
   Widget _buildFooterButton({
-    required IconData icon,
-    required VoidCallback onPressed,
-  }) {
-    return InkWell(
-      onTap: onPressed,
-      child: Icon(
-        icon,
-        color: Colors.white,
-        size: 45,
-      ),
-    );
-  }
+  IconData? icon, // ← шинэ мөр
+  String? imagePath,
+  double size = 12,
+  required VoidCallback onPressed,
+}) {
+  final double iconSize = 30;
+
+  return InkWell(
+    onTap: onPressed,
+    child: icon != null
+        ? Icon(
+            icon,
+            size: iconSize,
+            color: Colors.white,
+          )
+        : Image.asset(
+            imagePath!,
+            width: iconSize,
+            height: iconSize,
+          ),
+  );
+}
 }
