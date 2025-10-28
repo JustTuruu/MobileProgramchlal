@@ -23,7 +23,7 @@ class Footer extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _buildFooterButton(
+          _buildFooterButton( 
             // imagePath: 'assets/icon/ai.png',
             icon: Icons.home,
             onPressed: () {
